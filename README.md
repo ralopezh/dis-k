@@ -2,9 +2,12 @@
 
 ## Author
 Rodrigo A. Lopez
+
 Universidad de Santiago de Chile, Usach
+
 rlopez186@gmail.com
-ORCID: 0000-0003-3223-1498
+
+[ORCID](https://orcid.org/0000-0003-3223-1498): 0000-0003-3223-1498
 
 ## Credits
 If you use this code, please acknowledge the following references:
