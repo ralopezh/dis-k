@@ -32,11 +32,11 @@ This solver is programmed based on the equations derived in the above references
 
 * Make
 
-* Fortran compiler\ 
-gfortran or ifort\
+* Fortran compiler \ 
+gfortran or ifort \
 You can select the fortran compiler in the Makefile. You can also choose to include the openMP flag to run in parallel.
 
-* python3\
+* python3 \
   If you want a plot after the program is finished. If you prefer to make the plot yourself, comment lines 98 and 152 in src/main.f90
 
 ## Compile
