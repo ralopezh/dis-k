@@ -33,8 +33,9 @@ This solver is programmed based on the equations derived in the above references
 * **Fortran compiler** gfortran or ifort    
   You can select the fortran compiler in the Makefile. You can also choose to include the openMP flag to run in parallel.
 
-* **python3** \
-  If you want a plot after the program is finished. If you prefer to make the plot yourself, comment lines 98 and 152 in src/main.f90
+* **python3**  
+  If you want a plot after the program is finished. If you prefer to make the plot yourself, comment lines 98 and 152 in src/main.f90  
+  Also, line 84 in src/nyquist.f90
 
 ## Compile
 Just run
