@@ -1,4 +1,4 @@
-# Dispersion Solver for drifting bi-Kappa plasmas
+# Linear Dispersion Solver for drifting bi-Kappa plasmas
 
 ## Author
 **Rodrigo A. López**  
