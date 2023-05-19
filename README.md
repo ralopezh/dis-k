@@ -1,4 +1,4 @@
-# Dispersion Solver for drifting bi-Kappa plasmas
+# Linear Dispersion Solver for drifting bi-Kappa plasmas DIS-K
 
 ## Author
 **Rodrigo A. López**  
@@ -33,8 +33,9 @@ This solver is programmed based on the equations derived in the above references
 * **Fortran compiler** gfortran or ifort    
   You can select the fortran compiler in the Makefile. You can also choose to include the openMP flag to run in parallel.
 
-* **python3** \
-  If you want a plot after the program is finished. If you prefer to make the plot yourself, comment lines 98 and 152 in src/main.f90
+* **python3**  
+  If you want a plot after the program is finished. If you prefer to make the plot yourself, comment lines 98 and 152 in src/main.f90  
+  Also, line 84 in src/nyquist.f90
 
 ## Compile
 Just run
@@ -100,6 +101,13 @@ All the crossings between those contours correspond to solutions of the $\text{D
 Then, you can extract the values of $\text{Re}(w)$ and $\text{Im}(w)$ at those intersections and put them in the input file.
 For more details, please read Ref. [2] above.
 
-Now you can run dis-k using the input file. If you are solving for a fixed angle, nth=1, it will create an output.save file and plot using plot_disp.py.
-If you solve for a range of angles, nth>1, it will create an output_kth.save and plot using plot_map.py.
+Now you can run dis-k using the input file.  
+If you are solving for a fixed angle, nth=1, it will create an output.save file and plot using plot_disp.py.  
+If you solve for a range of angles, nth>1, it will create an output_kth.save and plot using plot_map.py.  
+Creating a map (nth>1) could take a while, especially using the Kappa version. You can run temp.py to inspect the program's progress since it generates the file temp.save continually.    
+nyquist.py plot the $\text{Re}(w)$ vs. $\text{Im}(w)$ map when you run the nyquist program.
 
+
+## Disclaimer
+
+I am not an expert programer, so if you find any bug or any way to improve the program, please contact me.
