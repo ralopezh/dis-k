@@ -1,13 +1,13 @@
 # Dispersion Solver for drifting bi-Kappa plasmas
 
 ## Author
-Rodrigo A. Lopez
+Rodrigo A. López
 
 Universidad de Santiago de Chile, Usach
 
 rlopez186@gmail.com
 
-[ORCID](https://orcid.org/0000-0003-3223-1498): 0000-0003-3223-1498
+ORCID: [0000-0003-3223-1498](https://orcid.org/0000-0003-3223-1498)
 
 ## Credits
 If you use this code, please acknowledge the following references:
@@ -63,9 +63,10 @@ Description of the routines used in src/
 * muller.f90 : Computes the real or complex roots of a nonlinear function, using an optimal Muller's method.
 
 * disp.f90 : Compute the elements of the dispersion tensor and return the determinant of it.
-* solve.f90 : Solve the equation Det{\Lambda}==0 using the muller routine. For a fixed value of theta, return the corresponding complex frequency for the entire k vector.
+* solve.f90 : Solve the equation $\text{Det}{\Lambda}=0$ using the muller routine. For a fixed value of theta, return the corresponding complex frequency for the entire k vector.
 
-* polarization.f90 : Compute the polarization and ratios |Ei/E|^2 and |Bi/B|^2
+* polarization.f90 : Compute the polarization and ratios $|Ei/E|^2$
+and $|Bi/B|^2$
 
 * solve2d.f90 : Use solve.f90 to find the complex frequencies for the complete range in k and theta. Creates a 2d vector theta vs. k.
 
@@ -86,9 +87,12 @@ path_to_executable/dis-k input.dat
 First, you need to set an input file. You can use the examples contained in the folder examples. 
 As in any linear dispersion solver, you must provide a complex initial
 seed $(w_{0r},w_{0i})$ for the solution at the initial wavenumber, k0, and angle, th0. If you don't have an initial guess, leave those values blank and run the code nyquist using that input file.
-The code nyquist plot the contours of  Real{det(Lambda)} = 0 and Imaginry{det(Lambda)}=0 in a Real{w} vs. Imaginary{w} map.
-All the crossings between those contours correspond to solutions of the det(Lamnda)=0. If you don't find intersections, you can adapt the search range at the end of the input file.
-Then, you can extract the values of Real{w} and Imaginary{w} at those intersections and put them in the input file.
+The code nyquist plot the contours of  $\text{Re}{\text{Det}(\Lambda)}
+= 0$ and $\text{Im}{\text{Det}(\Lambda)}=0$ in a $\text{Re}(w)$ vs.
+$\text{Im}(w)$ map.\
+All the crossings between those contours correspond to solutions of
+the $\text{Det}(\Lamnda)=0. If you don't find intersections, you can adapt the search range at the end of the input file.
+Then, you can extract the values of $\text{Re}(w)$ and $\text{Im}(w)$ at those intersections and put them in the input file.
 For more details, please read Ref. [2] above.
 
 Now you can run dis-k using the input file. If you are solving for a fixed angle, nth=1, it will create an output.save file and plot using plot_disp.py.
