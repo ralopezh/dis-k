@@ -1,6 +1,6 @@
 &inputdat
  version     = 'Whistler Heat-Flux'
- home        = './output/'
+ home        = './output/' !Main folder to write the data (python files must be here to plot)
  nsp         = 3          !Number of species
  rpem        = 1836.0     !Proton to electron mass ratio m_p/m_e
  wpewce      = 100.0      !Plasma to gyro frequency ratio for electrons
@@ -10,7 +10,7 @@
 !
 ! Starting from electrons at position 0 [core, strahl, protons, alphas, etc...]
 !
- subindex    = 'p'                             !subindex for the normalizing specie
+ subindex    = 'p'                             !subindex for the normalizing specie (used to plot)
  wpwc        = 4284.857                        !plasma to gyro-frequency of normalizing specie !SQRT((na/ne)*(ma/me))*wpewce
  rm          = 0.000544662 0.000544662 1.0     !normalized particle mass for each component
  ns          = 0.95 0.05 1.0                   !normalized density for each species 
