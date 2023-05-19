@@ -1,0 +1,64 @@
+&inputdat
+ version     = 'Kinetic Alfven Wave'
+ home        = './output/' 
+ nsp         = 2          !Number of species
+ rpem        = 1836.0     !Proton to electron mass ratio m_p/m_e
+ wpewce      = 100.0      !Plasma to gyro frequency ratio for electrons
+ &end
+!
+&particles
+!
+! Starting from electrons at position 0 [core, strahl, protons, alphas, etc...]
+!
+ subindex    = 'p'                             !subindex for the normalizing specie
+ wpwc        = 4284.857                        !plasma to gyro-frequency of normalizing specie !SQRT((na/ne)*(ma/me))*wpewce
+ rm          = 0.000544662 1.0                 !normalized particle mass for each component
+ ns          = 1.0 1.0                         !normalized density for each species 
+ rq          = -1.0 1.0                        !charge normalized to e q_a/e
+ betapal     = 0.1 0.1                         !parallel beta for each component
+ anis        = 1.0 1.0                         !temperature anisotropy T_{perp a}/T_{pal a}
+ kappa       = NaN NaN                         !kappa index; If kappa=NaN use Maxwellian
+ Ua          = 0.0 0.0                         !drift velocity normalized to c
+&end
+ !
+&wavenumber
+ np          = 300          !number of points to resolve in k
+ nth         = 300            !number of points to resolve in theta
+ k_range     = 0.05 10.0    !range of wavenumbers
+ th_range    = 0.01 90.0    !range of theta
+ logscale_k  = 0            !wavenumber vector in logscale? 0=NO, 1=YES
+ logscale_th = 0            !angles vector in logscale? 0=NO, 1=YES
+&end
+ !
+&roots
+  nroots       = 2           !number of solutions to resolve
+&end
+ !
+&seeds
+  k0          = 2.5 2.5             !initial wavenumber to start for each root
+  th0         = 88.0 88.0           !initial angle to start (in degrees) for each root
+  ! USE NYQUIST TO SET w0r and w0i
+  w0r         = 0.106 0.0351        !real part of the initial frequency for each seed
+  w0i         = -0.0025 -0.021      !imaginary part of the initial frequency for each seed
+&end
+ !
+&solver
+ damped       = 1           !Solve damped modes? 0 = No (only unstable modes), 1 = Yes 
+ gammatol     = 1.0d-5      !If damped = 0 kill the program after gamma < gammatol
+ tol          = 1.0d-12     !tolerance for the nonlinear root solver
+ itmax        = 700         !maximum number of iterations for the root solver
+ nsum         = 20          !number terms in the sum from -nsum to nsum FOR THE KAPPA CASE
+ nsummax      = 500         !upper limit for the bessel summation FOR MAXWELLIAN CASE
+ Bessel_min   = 1.0d-30     !minimum value to find nmax in Bessel functions
+ epsi         = 0.000021157 !radius of search for the solution
+ interpolate  = 1           !use interpolation? 0=NO, 1=YES
+&end
+ !
+ ! This section define the parameters to locate the initial seed
+ ! using nyquist.f90. Plot IMAGINARY(w) vs. REAL(w) at k = k0
+ !
+&nyq
+  nw            = 150             !number of points to build the diagram nw*nw
+  wr_range      = -0.15 0.15        !range of real frequanecy 
+  wi_range      = -0.1 0.05        !range of imaginary frequanecy 
+&end
