@@ -103,3 +103,6 @@ For more details, please read Ref. [2] above.
 Now you can run dis-k using the input file. If you are solving for a fixed angle, nth=1, it will create an output.save file and plot using plot_disp.py.
 If you solve for a range of angles, nth>1, it will create an output_kth.save and plot using plot_map.py.
 
+## Disclaimer
+
+I am not an expert programer, so if you find any bug or any way to improve the program, please contact me.
