@@ -1,6 +1,6 @@
 # Dispersion Solver for drifting bi-Kappa plasmas
 
-##Author
+## Author
 Rodrigo A. Lopez
 Universidad de Santiago de Chile, Usach
 rlopez186@gmail.com
