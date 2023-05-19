@@ -27,7 +27,7 @@ PROGRAM main
   REAL(KIND=8), ALLOCATABLE, DIMENSION(:,:) :: kmaxs
   INTEGER, DIMENSION(2) :: igm
   REAL(KIND=8) :: dk, dth
-  INTEGER :: i
+  INTEGER :: i, OMP_GET_MAX_THREADS
   LOGICAL :: use_openmp = .FALSE.
   !
   !$ CALL OMP_SET_NUM_THREADS(2,2)
