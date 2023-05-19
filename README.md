@@ -1,4 +1,5 @@
 # Linear Dispersion Solver for drifting bi-Kappa plasmas
+# DIS-K
 
 ## Author
 **Rodrigo A. López**  
