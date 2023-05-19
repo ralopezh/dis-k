@@ -28,10 +28,20 @@ PROGRAM main
   INTEGER, DIMENSION(2) :: igm
   REAL(KIND=8) :: dk, dth
   INTEGER :: i
-!
+  LOGICAL :: use_openmp = .FALSE.
+  !
   !$ CALL OMP_SET_NUM_THREADS(2,2)
   !$ CALL OMP_SET_NESTED(.TRUE.) 
-!
+  !
+  !$ use_openmp = .TRUE.
+  !$ PRINT*, "*******************************************"
+  !$ PRINT*, "OpenMP program"
+  !$ PRINT*, "Using ",OMP_GET_MAX_THREADS()," processors"
+  !$ PRINT*, "*******************************************"
+  IF( .NOT. use_openmp) THEN
+    PRINT *, "Non-OpenMP program"
+  END IF
+  !
   !Read the command line argument
   IF(COMMAND_ARGUMENT_COUNT().NE.1) THEN
     WRITE(*,*)'ERROR, INCORRECT NUMBER OF ARGUMENTS'
