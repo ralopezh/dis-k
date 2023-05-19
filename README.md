@@ -12,9 +12,18 @@ rlopez186@gmail.com
 ## Credits
 If you use this code, please acknowledge the following references:
 
-[1] - López, R., Shaaban, S., & Lazar, M. (2021). General dispersion properties of magnetized plasmas with drifting bi-Kappa distributions. DIS-K: Dispersion Solver for Kappa Plasmas. Journal of Plasma Physics,87(3), 905870310. doi:10.1017/S0022377821000593
+[1] - López, R., Shaaban, S., & Lazar, M. (2021). General dispersion
+properties of magnetized plasmas with drifting bi-Kappa distributions.
+DIS-K: Dispersion Solver for Kappa Plasmas. Journal of Plasma
+Physics,87(3), 905870310.
+doi:[10.1017/S0022377821000593](https://doi.org/10.1017/S0022377821000593)
 
-[2] - López, R.A., Moya, P.S., Shaaban, S.M., Lazar, M., Yoon, P.H., Poedts, S. (2021). Advanced Numerical Tools for Studying Waves and Instabilities in Kappa Distributed Plasmas. In: Lazar, M., Fichtner, H. (eds) Kappa Distributions. Astrophysics and Space Science Library, vol 464. Springer, Cham. doi:10.1007/978-3-030-82623-9_9
+[2] - López, R.A., Moya, P.S., Shaaban, S.M., Lazar, M., Yoon, P.H.,
+Poedts, S. (2021). Advanced Numerical Tools for Studying Waves and
+Instabilities in Kappa Distributed Plasmas. In: Lazar, M., Fichtner,
+H. (eds) Kappa Distributions. Astrophysics and Space Science Library,
+vol 464. Springer, Cham.
+doi:[10.1007/978-3-030-82623-9_9](https://doi.org/10.1007/978-3-030-82623-9_9)
 
 This solver is programmed based on the equations derived in the above references.
 
@@ -23,13 +32,15 @@ This solver is programmed based on the equations derived in the above references
 
 * Make
 
-* Fortran compiler: gfortran or ifort
+* Fortran compiler\ 
+gfortran or ifort\
 You can select the fortran compiler in the Makefile. You can also choose to include the openMP flag to run in parallel.
 
-* python3
+* python3\
   If you want a plot after the program is finished. If you prefer to make the plot yourself, comment lines 98 and 152 in src/main.f90
 
-## Compile:
+## Compile
+Just run
 ```
 make
 ```
@@ -61,10 +72,11 @@ Description of the routines used in src/
 * extras.f90 : Contains multiple definitions for exponentially normalized modified Bessel functions.
                
 ## Run
-Run the code: 
+If you do not have an initial guess solution, run first
 ```
 path_to_executable/nyquist input.dat
 ```
+If your input file contains the initial guess, run
 ```
 path_to_executable/dis-k input.dat
 ```
@@ -72,7 +84,8 @@ path_to_executable/dis-k input.dat
 ## How it works
 
 First, you need to set an input file. You can use the examples contained in the folder examples. 
-As in any linear dispersion solver, you must provide a complex initial seed (w0r,w0i) for the solution at the initial wavenumber, k0, and angle, th0. If you don't have an initial guess, leave those values blank and run the code nyquist using that input file.
+As in any linear dispersion solver, you must provide a complex initial
+seed $(w_{0r},w_{0i})$ for the solution at the initial wavenumber, k0, and angle, th0. If you don't have an initial guess, leave those values blank and run the code nyquist using that input file.
 The code nyquist plot the contours of  Real{det(Lambda)} = 0 and Imaginry{det(Lambda)}=0 in a Real{w} vs. Imaginary{w} map.
 All the crossings between those contours correspond to solutions of the det(Lamnda)=0. If you don't find intersections, you can adapt the search range at the end of the input file.
 Then, you can extract the values of Real{w} and Imaginary{w} at those intersections and put them in the input file.
