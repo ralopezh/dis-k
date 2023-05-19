@@ -48,7 +48,7 @@
  tol          = 1.0d-12     !tolerance for the nonlinear root solver
  itmax        = 800         !maximum number of iterations for the root solver
  nsum         = 10          !number terms in the sum from -nsum to nsum FOR THE KAPPA CASE
- nsummax      = 500         !upper limit for the bessel summation FOR MAXWELLIAN CASE
+ nsummax      = 100 !500         !upper limit for the bessel summation FOR MAXWELLIAN CASE
  Bessel_min   = 1.0d-30     !minimum value to find nmax in Bessel functions
  epsi         = 0.000021157 !radius of search for the solution
  interpolate  = 1           !use interpolation? 0=NO, 1=YES

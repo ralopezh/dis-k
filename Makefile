@@ -3,11 +3,11 @@
 SRC_DIR   = src
 OBJ_DIR   = obj
 
-#FC         = gfortran
-#FFLAGS     = -O3 -J$(OBJ_DIR) #-fopenmp
+FC         = gfortran
+FFLAGS     = -O3 -J$(OBJ_DIR) #-fopenmp
 
-FC         = ifort
-FFLAGS     = -O3 -module $(OBJ_DIR) -qopenmp
+#FC         = ifort
+#FFLAGS     = -O3 -module $(OBJ_DIR) -qopenmp
 
 SOURCES1 = params.f90 \
 	main.f90 \

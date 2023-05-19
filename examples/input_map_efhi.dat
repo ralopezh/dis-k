@@ -22,8 +22,8 @@
  &end
  !
  &wavenumber
- np          = 100        !number of points to resolve in k
- nth         = 100        !number of points to resolve in theta
+ np          = 250        !number of points to resolve in k
+ nth         = 250        !number of points to resolve in theta
  k_range     = 0.03 0.9   !range of wavenumbers
  th_range    = 0.01 90.0  !range of theta
  logscale_k  = 0            !wavenumber vector in logscale? 0=NO, 1=YES
@@ -48,7 +48,7 @@
  tol          = 1.0d-12     !tolerance for the nonlinear root solver
  itmax        = 800         !maximum number of iterations for the root solver
  nsum         = 6          !number terms in the sum from -nsum to nsum FOR THE KAPPA CASE
- nsummax      = 500         !upper limit for the bessel summation FOR MAXWELLIAN CASE
+ nsummax      = 100 !500         !upper limit for the bessel summation FOR MAXWELLIAN CASE
  Bessel_min   = 1.0d-30     !minimum value to find nmax in Bessel functions
  epsi         = 0.000021157 !radius of search for the solution
  interpolate  = 1           !use interpolation? 0=NO, 1=YES
