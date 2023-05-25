@@ -34,8 +34,9 @@ This solver is programmed based on the equations derived in the above references
   You can select the fortran compiler in the Makefile. You can also choose to include the openMP flag to run in parallel.
 
 * **python3**  
-  If you want a plot after the program is finished. If you prefer to make the plot yourself, comment lines 98 and 152 in src/main.f90  
-  Also, line 84 in src/nyquist.f90
+  You need python 3 and the modules numpy, matplotlib and scipy.  
+  The fortran program will call python to plot the solution after the solver is finished and the data saved.  
+  If you prefer to make the plot yourself, comment lines 98 and 152 in src/main.f90, and line 84 in src/nyquist.f90
 
 ## Compile
 Just run
