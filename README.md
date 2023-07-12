@@ -26,7 +26,7 @@ doi:[10.1007/978-3-030-82623-9_9](https://doi.org/10.1007/978-3-030-82623-9_9)
 This solver is programmed based on the equations derived in the above references.
 
 ## Acknowledgements
-We thank the support of Anid Chile through the Fondecyt grant No. 11201048.
+We thank the support of Anid Chile through Fondecyt grant No. 11201048.
 
 ## Requisites
 
@@ -67,7 +67,7 @@ Description of the routines used in src/
   Definition of the plasma dispersion function.
 
 * **muller.f90**  
-  Computes the real or complex roots of a nonlinear function, using an optimal Muller's method.
+  Computes the real or complex roots of a nonlinear function using an optimal Muller's method.
 
 * **disp.f90**  
   Compute the elements of the dispersion tensor and return the determinant of it.
@@ -84,7 +84,7 @@ Description of the routines used in src/
   Contains multiple definitions for exponentially normalized modified Bessel functions.
                
 ## Run
-If you do not have an initial guess solution, run first
+If you do not have an initial guess solution, run it first
 ```
 path_to_executable/nyquist input.dat
 ```
@@ -113,4 +113,4 @@ nyquist.py plot the $\text{Re}(w)$ vs. $\text{Im}(w)$ map when you run the nyqui
 
 ## Disclaimer
 
-I am not an expert programer, so if you find any bug or any way to improve the program, please contact me.
+I am not an expert programmer, so if you find any bug or any way to improve the program, please get in touch with me.
