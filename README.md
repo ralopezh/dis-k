@@ -1,4 +1,4 @@
-# Linear Dispersion Solver for drifting bi-Kappa plasmas DIS-K
+# DIS-K : Linear Dispersion Solver for drifting bi-Kappa plasmas
 [![DOI](https://zenodo.org/badge/642871489.svg)](https://zenodo.org/badge/latestdoi/642871489)
 
 ## Author
