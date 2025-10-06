@@ -27,10 +27,10 @@ FUNCTION muller(xi,yi,thi,itmax,tol)
   cond = 0
   it = 0
   !Begin to iteratively compute a root of the nonlinear function.
+  f1 = disp(x(1),yi,thi)
+  f2 = disp(x(2),yi,thi)
+  f3 = disp(x(3),yi,thi)
   DO WHILE (it < itmax .AND. cond /= 1)
-    f1 = disp(x(1),yi,thi)
-    f2 = disp(x(2),yi,thi)
-    f3 = disp(x(3),yi,thi)
     !
     fx3x2 = (f2-f3)/(x(2)-x(3))
     fx3x1 = (f1-f3)/(x(1)-x(3))
@@ -65,8 +65,11 @@ FUNCTION muller(xi,yi,thi,itmax,tol)
       ENDIF
     ENDIF
     x(1) = x(2)
+    f1 = f2
     x(2) = x(3)
+    f2 = f3
     x(3) = muller
+    f3 = disp(x(3),yi,thi)
     it = it+1
   ENDDO
   IF (it > itmax .AND. cond==0) PRINT*,'ROOT: Algorithm failed to converge within given parameters.'  
