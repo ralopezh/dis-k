@@ -53,9 +53,9 @@ SUBROUTINE solve(kvec,k0,thi,z0,np,nroots,wsol,pols,ratios)
         zc(nex) = DCMPLX(poly_real,poly_imag)
       ENDIF
       ncount = ncount+1
-      seed(1) = zc(nex) - epsi*zc(nex)
+      seed(1) = zc(nex) - DCMPLX(epsi,epsi)
       seed(2) = zc(nex)
-      seed(3) = zc(nex) + epsi*zc(nex)
+      seed(3) = zc(nex) + DCMPLX(epsi,epsi)
       !newseed = root_finder(seed,ki,thi(nex),itmax,tol)
       newseed = muller(seed,ki,thi(nex),itmax,tol)
       !print*,ki,thi(nex),newseed
@@ -89,9 +89,9 @@ SUBROUTINE solve(kvec,k0,thi,z0,np,nroots,wsol,pols,ratios)
         zc(nex) = DCMPLX(poly_real,poly_imag)
       ENDIF
       ncount = ncount+1
-      seed(1) = zc(nex) - epsi*zc(nex)
+      seed(1) = zc(nex) - DCMPLX(epsi,epsi)
       seed(2) = zc(nex)
-      seed(3) = zc(nex) + epsi*zc(nex)
+      seed(3) = zc(nex) + DCMPLX(epsi,epsi)
       !newseed = root_finder(seed,ki,thi(nex),itmax,tol)
       newseed = muller(seed,ki,thi(nex),itmax,tol)
       !print*,ki,thi(nex),newseed
@@ -133,9 +133,9 @@ SUBROUTINE solve1p(ki,thi,z0)
   COMPLEX(KIND=8), DIMENSION(3) :: seed
   COMPLEX(KIND=8) :: root_finder, muller, newseed
 !
-  seed(1) = z0*(1.0 - epsi)
+  seed(1) = z0 - DCMPLX(epsi,epsi)
   seed(2) = z0
-  seed(3) = z0*(1.0 + epsi)
+  seed(3) = z0 + DCMPLX(epsi,epsi)
   !newseed = root_finder(seed,ki,thi,itmax,tol)
   newseed = muller(seed,ki,thi,itmax,tol)
   z0 = newseed
