@@ -1,4 +1,5 @@
-# Linear Dispersion Solver for drifting bi-Kappa plasmas DIS-K
+# DIS-K : Linear Dispersion Solver for drifting bi-Kappa plasmas
+[![DOI](https://zenodo.org/badge/642871489.svg)](https://zenodo.org/badge/latestdoi/642871489)
 
 ## Author
 **Rodrigo A. López**  
@@ -25,6 +26,8 @@ doi:[10.1007/978-3-030-82623-9_9](https://doi.org/10.1007/978-3-030-82623-9_9)
 
 This solver is programmed based on the equations derived in the above references.
 
+## Acknowledgements
+We thank the support of Anid Chile through Fondecyt grant No. 11201048.
 
 ## Requisites
 
@@ -34,8 +37,9 @@ This solver is programmed based on the equations derived in the above references
   You can select the fortran compiler in the Makefile. You can also choose to include the openMP flag to run in parallel.
 
 * **python3**  
-  If you want a plot after the program is finished. If you prefer to make the plot yourself, comment lines 98 and 152 in src/main.f90  
-  Also, line 84 in src/nyquist.f90
+  You need python 3 and the modules numpy, matplotlib and scipy.  
+  The fortran program will call python to plot the solution after the solver is finished and the data saved.  
+  If you prefer to make the plot yourself, comment lines 98 and 152 in src/main.f90, and line 84 in src/nyquist.f90
 
 ## Compile
 Just run
@@ -64,7 +68,7 @@ Description of the routines used in src/
   Definition of the plasma dispersion function.
 
 * **muller.f90**  
-  Computes the real or complex roots of a nonlinear function, using an optimal Muller's method.
+  Computes the real or complex roots of a nonlinear function using an optimal Muller's method.
 
 * **disp.f90**  
   Compute the elements of the dispersion tensor and return the determinant of it.
@@ -81,7 +85,7 @@ Description of the routines used in src/
   Contains multiple definitions for exponentially normalized modified Bessel functions.
                
 ## Run
-If you do not have an initial guess solution, run first
+If you do not have an initial guess solution, run it first
 ```
 path_to_executable/nyquist input.dat
 ```
@@ -110,4 +114,4 @@ nyquist.py plot the $\text{Re}(w)$ vs. $\text{Im}(w)$ map when you run the nyqui
 
 ## Disclaimer
 
-I am not an expert programer, so if you find any bug or any way to improve the program, please contact me.
+I am not an expert programmer, so if you find any bug or any way to improve the program, please get in touch with me.
